@@ -1,0 +1,18 @@
+<kendo-card [ngStyle]="{'background-color': cardColor}">
+  <kendo-card-header class="k-hstack">
+    <div>
+      <h1 kendoCardTitle>{{title}}</h1>
+      <p kendoCardSubtitle>{{subtitle}}</p>
+    </div>
+  </kendo-card-header>
+
+  <kendo-card-body>
+    <p>{{getDescription()}}</p>
+  </kendo-card-body>
+
+  <kendo-card-actions *ngIf = "description.length>100" orientation="horizontal" layout="start" >
+    <button (click)="toggleShowMore()" class="k-button">
+      {{isShowMore ? "SHOW LESS" : "SHOW MORE"}}
+    </button>
+  </kendo-card-actions>
+</kendo-card>

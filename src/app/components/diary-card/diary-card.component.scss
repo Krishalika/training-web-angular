@@ -1,0 +1,26 @@
+kendo-card{
+  border-radius: 12px;
+  width: 100% !important;
+
+  .k-card-title {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  kendo-card-actions{
+    .k-button {
+      border-width: 0;
+      font-weight: bold;
+      font-size: 0.8rem;
+      border-radius: 20px;
+      background-color: inherit;
+    }
+  }
+}
+
+p {
+  text-align: justify;
+  margin-top: 10px !important;
+}
+
+
