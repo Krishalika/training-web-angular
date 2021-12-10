@@ -7,6 +7,10 @@ import { DiaryCardComponent } from './components/diary-card/diary-card.component
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridModule } from '@progress/kendo-angular-grid';
+import { DiaryHomeComponent } from './components/diary-home/diary-home.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormFieldModule, TextAreaModule} from "@progress/kendo-angular-inputs";
+import {LabelModule} from "@progress/kendo-angular-label";
 
 
 
@@ -14,14 +18,20 @@ import { GridModule } from '@progress/kendo-angular-grid';
 @NgModule({
   declarations: [
     AppComponent,
-    DiaryCardComponent
+    DiaryCardComponent,
+    DiaryHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
     BrowserAnimationsModule,
-    GridModule
+    GridModule,
+    ReactiveFormsModule,
+    FormsModule,
+    FormFieldModule,
+    LabelModule,
+    TextAreaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

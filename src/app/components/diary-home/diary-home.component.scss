@@ -1,0 +1,45 @@
+$text-box-color : #B9E9FF;
+.diary-home{
+  width: auto;
+  background-color: #5094f8;
+  width: 100%;
+  min-height:100vh;
+}
+
+
+.k-form {
+  padding: 20px;
+  .title-row{
+    display: flex;
+    justify-content: space-between;
+  }
+  .k-form-field{
+    width: 100%;
+  }
+  .input-text-wrap{
+    padding: 4px 0 4px 4px;
+    background-color: $text-box-color;
+    border-radius: 24px;
+    margin-right: 10px;
+    input{
+      font-size: medium;
+    }
+  }
+    kendo-textarea{
+      padding-left: 4px;
+      background-color: $text-box-color;
+      border-radius: 12px;
+      font-size: medium;
+      .k-input{
+        min-height: 150px !important;
+      }
+    }
+  button{
+    background-color: #2271F1EE;
+    border-radius: 20px;
+    width: 100%;
+    padding: 6px 16px;
+    font-size: large;
+    font-weight: bold;
+  }
+}
