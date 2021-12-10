@@ -6,19 +6,23 @@ import { AppComponent } from './app.component';
 import { DiaryCardComponent } from './diary-card/diary-card.component';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DiaryHomeComponent } from './diary-home/diary-home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DiaryCardComponent
+    DiaryCardComponent,
+    DiaryHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

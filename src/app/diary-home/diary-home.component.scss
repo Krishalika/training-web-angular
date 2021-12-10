@@ -1,0 +1,26 @@
+.card-container{
+    padding: 10px;
+  }
+  .example {
+    display: flex;
+    justify-content: center;
+  }
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrap .arrival-date {
+    width: 90%;
+    margin-right: 18px;
+  }
+  .k-form {
+    width: 400px;
+  }
+  .add-post{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: aquamarine;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  }
