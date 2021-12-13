@@ -29,4 +29,11 @@
 
     </fieldset>
   </form>
+
+  <div class="grid">
+    <app-diary-card *ngFor="let diaryCard of diaryCards" [title]="diaryCard.title"
+                    [subtitle]="diaryCard.subtitle"
+                    [description]="diaryCard.description">
+    </app-diary-card>
+  </div>
 </div>

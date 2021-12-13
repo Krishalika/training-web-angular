@@ -1,7 +1,7 @@
 $text-box-color : #B9E9FF;
 .diary-home{
   width: auto;
-  background-color: #5094f8;
+  background-color: #6499ec;
   width: 100%;
   min-height:100vh;
 }
@@ -35,11 +35,39 @@ $text-box-color : #B9E9FF;
       }
     }
   button{
-    background-color: #2271F1EE;
+    background-color: rgba(17, 101, 238, 0.93);
     border-radius: 20px;
     width: 100%;
     padding: 6px 16px;
     font-size: large;
     font-weight: bold;
+  }
+}
+
+.grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  word-break: break-word;
+}
+
+@media only screen and (max-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewEncapsulation } from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-diary-card',
@@ -7,13 +7,13 @@ import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 })
 export class DiaryCardComponent implements OnInit {
 
-  public title :string = "Card Title";
-  public subtitle :string = "Sub Title";
-  public description : string = `
-      The Black Sea is bordered by Ukraine, Romania, Bulgaria, Turkey,
-      Georgia, and Russia. It has a positive water balance; that is, a net
-      outflow of water 300 km3 per year through the Bosphorus and the
-      Dardanelles into the Aegean Sea.`
+  @Input()
+  public title :string = '';
+  @Input()
+  public subtitle :string = '';
+  @Input()
+  public description : string = '';
+
   public cardColor:string = "#B9E9FF"
   public isShowMore = false;
 
