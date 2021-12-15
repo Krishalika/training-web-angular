@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormGroup,FormControl,Validator} from "@angular/forms";
+import {Store} from "@ngrx/store";
+import {selectDiaryCards} from "../../store/cards.selectors";
+import {Observable} from "rxjs";
+import {addDiaryCard} from "../../store/cards.actions";
+import {DiaryCard} from "../../models/diarycard.model";
 
-interface DiaryCard{
-  title : string;
-  subtitle : string;
-  description : string;
-}
 
 @Component({
   selector: 'app-diary-home',
@@ -20,9 +20,10 @@ export class DiaryHomeComponent implements OnInit {
     description : new FormControl(),
   })
 
-  public diaryCards : DiaryCard[] = []
+  public diaryCards$ : Observable<DiaryCard[]>  = this.store.select(selectDiaryCards);
 
-  constructor() { }
+  constructor(private store:Store<{diaryCards: DiaryCard[]}>) {
+  }
 
   ngOnInit(): void {
   }
@@ -39,13 +40,12 @@ export class DiaryHomeComponent implements OnInit {
       return;
     }
 
-    this.diaryCards = [...this.diaryCards,
-      {
-        title : this.diaryForm.controls.title.value,
-        subtitle : "Dushan",
-        description : this.diaryForm.controls.description.value
-      }
-    ]
+    this.store.dispatch(addDiaryCard({
+      title : this.diaryForm.controls.title.value,
+      subtitle : "Dushan",
+      description : this.diaryForm.controls.description.value
+    }))
+
     this.clearForm();
   }
 

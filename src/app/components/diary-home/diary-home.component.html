@@ -31,7 +31,8 @@
   </form>
 
   <div class="grid">
-    <app-diary-card *ngFor="let diaryCard of diaryCards" [title]="diaryCard.title"
+    <app-diary-card *ngFor="let diaryCard of diaryCards$ | async"
+                    [title]="diaryCard.title"
                     [subtitle]="diaryCard.subtitle"
                     [description]="diaryCard.description">
     </app-diary-card>

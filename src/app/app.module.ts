@@ -11,6 +11,8 @@ import { DiaryHomeComponent } from './components/diary-home/diary-home.component
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FormFieldModule, TextAreaModule} from "@progress/kendo-angular-inputs";
 import {LabelModule} from "@progress/kendo-angular-label";
+import { StoreModule } from '@ngrx/store';
+import {diarycardsReducer} from "./store/cards.reducer";
 
 
 
@@ -31,7 +33,8 @@ import {LabelModule} from "@progress/kendo-angular-label";
     FormsModule,
     FormFieldModule,
     LabelModule,
-    TextAreaModule
+    TextAreaModule,
+    StoreModule.forRoot({diaryCards:diarycardsReducer}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
