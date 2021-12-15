@@ -1,12 +1,12 @@
 <div class="demo">
   <kendo-card class="card">
     <kendo-card-body class="card-body">
-      <h4 class="header" >{{title}}</h4>
-      <h5 class="subtitle" >{{subtitle}}</h5>
+      <h4 class="header" >{{data?.title}}</h4>
+      <h5 class="subtitle" >name</h5>
       <div>
         <hr kendoCardSeparator />
         <div class="recipe-wrap">
-          {{(readMore) ? description : description | slice:0:100}} <span *ngIf="!readMore">...</span>
+          {{(readMore) ? data?.description : data?.description | slice:0:100}} <span *ngIf="!readMore">...</span>
         </div>
       </div>
     </kendo-card-body>
