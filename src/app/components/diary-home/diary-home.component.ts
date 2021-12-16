@@ -3,7 +3,7 @@ import {FormGroup,FormControl,Validator} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {selectDiaryCards} from "../../store/cards.selectors";
 import {Observable} from "rxjs";
-import {addDiaryCard} from "../../store/cards.actions";
+import {addDiaryCard, getDiaryCards} from "../../store/cards.actions";
 import {DiaryCard} from "../../models/diarycard.model";
 
 
@@ -26,6 +26,7 @@ export class DiaryHomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.store.dispatch(getDiaryCards());
   }
 
   public submitForm(): void {
@@ -40,11 +41,13 @@ export class DiaryHomeComponent implements OnInit {
       return;
     }
 
-    this.store.dispatch(addDiaryCard({
+    const diarycard : DiaryCard = {
       title : this.diaryForm.controls.title.value,
       subtitle : "Dushan",
-      description : this.diaryForm.controls.description.value
-    }))
+      description : this.diaryForm.controls.description.value,
+      created : new Date(),
+    }
+    this.store.dispatch(addDiaryCard({diarycard}));
 
     this.clearForm();
   }

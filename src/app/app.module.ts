@@ -14,8 +14,12 @@ import {LabelModule} from "@progress/kendo-angular-label";
 import { StoreModule } from '@ngrx/store';
 import {diarycardsReducer} from "./store/cards.reducer";
 
-
-
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {environment} from "../environments/environment";
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {DiaryCardEffect} from "./store/cards.effects";
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import {diarycardsReducer} from "./store/cards.reducer";
     FormFieldModule,
     LabelModule,
     TextAreaModule,
-    StoreModule.forRoot({diaryCards:diarycardsReducer}, {})
+    StoreModule.forRoot({diaryCards:diarycardsReducer}, {}),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    EffectsModule.forRoot([DiaryCardEffect]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
