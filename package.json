@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ngrx/store": "^13.0.2",
     "@progress/kendo-angular-common": "^2.0.0",
     "@progress/kendo-angular-l10n": "^3.0.0",
     "@progress/kendo-angular-layout": "^6.3.6",

@@ -1,0 +1,21 @@
+<div class="login-card">
+
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-lg mt-2">
+      <div class="loginBox">
+      <h3 class="text-center">Diary Book... <span class="highlight">Login to proceed</span></h3>
+        <form [formGroup]="form" (ngSubmit)="login()" >
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" formControlName="name" id="name">
+            <button class="btn btn-outline-secondary" type="button" id="random">Random</button>
+          </div>
+          <div class="button-wrap mt-2 wd-50">
+            <button class="btn btn-primary btn-sm" type="submit">LOGIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

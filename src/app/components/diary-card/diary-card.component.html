@@ -3,7 +3,6 @@
     <kendo-card-body class="card-body">
       <h1 class="title" >{{data?.title}}</h1>
       <h3 class="subtitle" >{{data?.subtitle}}</h3>
-      <hr kendoCardSeparator />
         <div class="body-content">
           {{(isExpand) ? data?.description : data?.description | slice:0:100}} <span *ngIf="!isExpand">...</span>
         </div>
