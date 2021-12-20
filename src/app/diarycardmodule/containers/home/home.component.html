@@ -1,0 +1,13 @@
+<div class="diary-home">
+  <h1 class="page-title">Home</h1>
+
+  <app-form></app-form>
+
+  <div *ngIf="diaryCards$" class="grid">
+    <app-diary-card *ngFor="let diaryCard of diaryCards$ | async"
+                    [title]="diaryCard.title"
+                    [subtitle]="diaryCard.subtitle"
+                    [description]="diaryCard.description">
+    </app-diary-card>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<form class="k-form" [formGroup]="diaryForm">
+  <fieldset class="k-form-fieldset">
+    <div class="title-row">
+      <kendo-formfield>
+        <div class="input-text-wrap">
+          <input
+            class="k-text k-input"
+            formControlName="title"
+            placeholder="Submit New"
+            required/>
+        </div>
+      </kendo-formfield>
+      <div class="k-form-buttons">
+        <button class="k-button" (click)="submitForm()">
+          SUBMIT
+        </button>
+      </div>
+    </div>
+    <kendo-formfield>
+      <kendo-textarea class="k-textarea"
+                      formControlName="description"
+                      placeholder="Enter Description"
+                      resizable="none"
+      >
+      </kendo-textarea>
+    </kendo-formfield>
+
+  </fieldset>
+</form>
+
+

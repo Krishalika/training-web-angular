@@ -1,0 +1,39 @@
+$text-box-color : #B9E9FF;
+.k-form {
+  padding: 20px;
+  .title-row{
+    display: flex;
+    justify-content: space-between;
+  }
+  .k-form-field{
+    width: 100%;
+  }
+  .input-text-wrap{
+    padding: 4px 0 4px 4px;
+    background-color: $text-box-color;
+    border-radius: 24px;
+    margin-right: 10px;
+    input{
+      font-size: medium;
+    }
+  }
+  kendo-textarea{
+    padding-left: 4px;
+    background-color: $text-box-color;
+    border-radius: 12px;
+    font-size: medium;
+    .k-input{
+      min-height: 150px !important;
+    }
+  }
+  button{
+    background-color: rgba(17, 101, 238, 0.93);
+    border-radius: 20px;
+    width: 100%;
+    padding: 6px 16px;
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+
