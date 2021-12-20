@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DiaryHomeComponent} from "./pages/diary-home/diary-home.component";
-import {LoginComponent} from "./pages/login/login.component";
+import {DiaryHomeComponent} from "./diary-card-module/containers/diary-home/diary-home.component";
+import {LoginComponent} from "./diary-card-module/containers/login/login.component";
 
 const routes: Routes = [
   {path:'', component:DiaryHomeComponent},

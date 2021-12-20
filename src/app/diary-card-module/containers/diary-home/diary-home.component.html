@@ -1,0 +1,8 @@
+<div class="home">
+  <app-navbar></app-navbar>
+  <app-diary-form></app-diary-form>
+    <div class="k-d-flex k-flex-wrap k-ml-8 k-mr-4 k-p-0 k-mt-5">
+      <app-diary-card *ngFor="let card of diaryCardArray$|async" [data]="card"></app-diary-card>
+    </div>
+</div>
+

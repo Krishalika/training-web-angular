@@ -1,4 +1,4 @@
-import DiaryCardObject from '../models/DiaryCardObject';
+import DiaryCardObject from '../../models/DiaryCardObject';
 
 export interface diaryHomeState {
   diaryCards:DiaryCardObject[]

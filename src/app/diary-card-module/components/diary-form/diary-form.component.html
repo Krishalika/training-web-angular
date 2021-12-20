@@ -1,0 +1,31 @@
+<div class="form-container">
+  <form class="k-form" [formGroup]="form">
+    <fieldset class="k-form-fieldset">
+      <kendo-formfield>
+        <label for="title">Title</label>
+        <input
+          id="title"
+          formControlName="title"
+          kendoTextBox
+        />
+      </kendo-formfield>
+
+      <kendo-formfield>
+        <label for="description">Description</label>
+        <kendo-textarea class="k-textarea"
+                        id="description"
+                        formControlName="description"
+                        resizable="none"
+                        style="height: 100px;"
+        >
+        </kendo-textarea>
+
+      </kendo-formfield>
+      <div class="k-form-buttons">
+        <button class="k-button" (click)="submitForm()">
+          ADD NEW CARD
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>

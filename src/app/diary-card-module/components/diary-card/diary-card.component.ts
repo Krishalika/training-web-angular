@@ -14,8 +14,7 @@ export class DiaryCardComponent implements OnInit {
 
   public isExpand:boolean= false;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public showMore():void {
     this.isExpand = !this.isExpand;

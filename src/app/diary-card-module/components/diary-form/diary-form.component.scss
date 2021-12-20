@@ -1,0 +1,23 @@
+label{
+  font-size: 20px;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.k-form {
+  width: 800px;
+}
+kendo-textarea{
+  border-radius: 5px;
+}
+.k-button{
+  background-color: #0275d8;
+  color: white;
+}
+.k-button:hover{
+  background-color: #025aa8;
+}
