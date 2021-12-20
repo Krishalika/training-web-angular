@@ -2,11 +2,13 @@ class DiaryCardObject{
   private _title:string;
   private _subtitle:string;
   private _description:string;
+  private _created: Date;
 
-  constructor(title: string, subtitle: string, description: string) {
+  constructor(title: string, subtitle: string, description: string, date: Date) {
     this._title = title;
     this._subtitle = subtitle;
     this._description = description;
+    this._created = date;
   }
 
   public get title(): string {
@@ -32,6 +34,11 @@ class DiaryCardObject{
   public set description(value: string) {
     this._description = value;
   }
+
+  public get created(): Date {
+    return this._created;
+  }
+
 }
 
 export default DiaryCardObject;

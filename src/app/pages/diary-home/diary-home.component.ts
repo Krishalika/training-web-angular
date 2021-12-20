@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import DiaryCardObject from '../../models/DiaryCardObject';
 import { select, Store} from "@ngrx/store";
-import * as diaryCardActions from './../../state/diary-home.actions';
+import * as diaryCardActions from '../../state/actions/diary-home.actions';
 import { diaryHomeState } from '../../state/diary-home.state';
 import { selectDiaryCards} from "../../state/diary-home.selectors";
 import {Observable} from "rxjs";
@@ -20,10 +20,10 @@ export class DiaryHomeComponent implements OnInit {
     title: new FormControl(''),
     description: new FormControl(''),
   })
-    console.log(this.diaryCardArray$)
   }
 
   ngOnInit(): void {
+    this.store.dispatch(diaryCardActions.getDiaryCards());
   }
 
   public submitForm():void {
@@ -34,7 +34,7 @@ export class DiaryHomeComponent implements OnInit {
       console.log('Missing description')
     }
     else{
-      let newDiaryCard: DiaryCardObject = new DiaryCardObject(this.form.get('title')?.value, "user name", this.form.get('description')?.value);
+      let newDiaryCard: DiaryCardObject = new DiaryCardObject(this.form.get('title')?.value, "user name", this.form.get('description')?.value, new Date());
       this.store.dispatch(diaryCardActions.addDiaryCard({diaryCard: newDiaryCard}));
     }
     this.clearForm();
