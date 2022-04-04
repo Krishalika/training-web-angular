@@ -11,7 +11,7 @@ export class DiaryCardComponent implements OnInit {
   @Input() card?: Post;
   @Input() index: number = 0;
 
-  subtitle: string = "";
+  subtitle: string = "test";
   color: string = "#B9E9FF"
 
   isExpanded: boolean = false;

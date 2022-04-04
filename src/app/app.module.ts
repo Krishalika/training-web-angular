@@ -12,7 +12,9 @@ import { FormFieldModule, TextAreaModule } from "@progress/kendo-angular-inputs"
 import { CardListComponent } from '../Components/card-list/card-list.component';
 import { StoreModule } from '@ngrx/store';
 import { cardReducer } from 'src/reducers/card.reducer';
-
+import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { cardReducer } from 'src/reducers/card.reducer';
     TextAreaModule,
     StoreModule.forRoot({
       card: cardReducer
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
 
   ],
   providers: [],
