@@ -29,7 +29,7 @@ export class FormComponent implements OnInit {
   }
 
   addCard(title, description) {
-    this.store.dispatch(new CardActions.AddCard({ title: title, description: description }))
+    this.store.dispatch(new CardActions.AddCard({ user: "krishalika", title: title, description: description, created: new Date() }))
   }
 
   public submitForm(): void {

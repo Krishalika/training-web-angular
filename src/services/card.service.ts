@@ -1,19 +1,43 @@
 import { Injectable } from '@angular/core';
-import { Card } from 'src/models/card.model';
+import { Post } from 'src/models/post.model';
+import { AngularFirestore, AngularFirestoreCollection ,AngularFirestoreDocument} from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
 
-  listOfCards: Card[] = [];
+  // listOfCards: Post[] = [];
+  postsCollection: AngularFirestoreCollection<Post>;
+  posts: Observable<Post[]>;
+  postDoc: AngularFirestoreDocument<Post>;
+
+  constructor(private angularFirestore: AngularFirestore){
+    this.postsCollection = this.angularFirestore.collection('posts', ref => ref.orderBy('created','desc'));
+
+    this.posts = this.postsCollection.snapshotChanges().map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as Post;
+       // data.id = a.payload.doc.id;
+        return data;
+      });
+    });
+  }
 
   getCards() {
-    return this.listOfCards;
+
   }
 
-  addCard(card: Card) {
-    this.listOfCards.push(card);
+  addCard(card: Post) {
   }
+
+  // getCards() {
+  //   return this.listOfCards;
+  // }
+
+  // addCard(card: Post) {
+  //   this.listOfCards.push(card);
+  // }
 
 }

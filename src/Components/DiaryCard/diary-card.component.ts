@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Card } from 'src/models/card.model';
+import { Post } from 'src/models/post.model';
 
 @Component({
   selector: 'app-diary-card',
@@ -8,10 +8,10 @@ import { Card } from 'src/models/card.model';
 })
 export class DiaryCardComponent implements OnInit {
 
-  @Input() card?: Card;
+  @Input() card?: Post;
   @Input() index: number = 0;
 
-  subtitle: string = "TestUser";
+  subtitle: string = "";
   color: string = "#B9E9FF"
 
   isExpanded: boolean = false;

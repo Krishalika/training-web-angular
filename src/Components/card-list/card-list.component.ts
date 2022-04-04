@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from 'src/models/card.model';
+import { Post } from 'src/models/post.model';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app.state';
@@ -11,7 +11,7 @@ import { AppState } from 'src/app.state';
 })
 export class CardListComponent implements OnInit {
 
-  cards: Observable<Card[]>;
+  cards: Observable<Post[]>;
   constructor(private store: Store<AppState>) {
     this.cards = store.select('card')
   }

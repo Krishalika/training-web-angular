@@ -1,5 +1,5 @@
-import { Card } from './models/card.model';
+import { Post } from './models/post.model';
 
 export interface AppState {
-    readonly card: Card[];
+    readonly card: Post[];
 }
