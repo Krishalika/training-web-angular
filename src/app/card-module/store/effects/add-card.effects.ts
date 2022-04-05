@@ -6,11 +6,11 @@ import { addCard, addCardSuccess, addCardFailure } from "../actions/card.actions
 
 @Injectable()
 export class AddDiaryCardEffects {
-    constructor(private actions$: Actions, private cardService: DiaryCardService) {
+    constructor(private actions: Actions, private cardService: DiaryCardService) {
     }
 
     public addDiaryCard$ = createEffect(() => {
-        return this.actions$.pipe(
+        return this.actions.pipe(
             ofType(addCard),
             mergeMap(async (action) => {
                 return this.cardService.addCard(action.card).

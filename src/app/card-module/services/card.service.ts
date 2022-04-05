@@ -13,11 +13,11 @@ export class DiaryCardService {
     await this.firestore.collection('posts').add({ user: diaryCard.user, title: diaryCard.title, description: diaryCard.description, created: diaryCard.created });
   }
   public getCards() {
-    return this.firestore.collection('posts').snapshotChanges().pipe(map((querySnapshot) => {
-      return querySnapshot.map((doc) => {
+    return this.firestore.collection('posts').snapshotChanges().pipe(map((snapshot) => {
+      return snapshot.map((doc) => {
         const data: any = doc.payload.doc.data();
-        const diaryCard = new Post(data.user, data.title, data.description, data.created);
-        return diaryCard
+        const card = new Post(data.user, data.title, data.description, data.created);
+        return card
       });
     }))
   }
