@@ -16,6 +16,8 @@ import { environment } from "../environments/environment";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { EffectsModule } from '@ngrx/effects';
+import { AddDiaryCardEffects } from "../app/card-module/store/effects/add-card.effects";
+import { GetDiaryCardsEffects } from "../app/card-module/store/effects/get-card.effects";
 
 @NgModule({
   declarations: [
@@ -38,8 +40,10 @@ import { EffectsModule } from '@ngrx/effects';
     }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    EffectsModule.forRoot([])
-
+    EffectsModule.forRoot([
+      AddDiaryCardEffects,
+      GetDiaryCardsEffects,
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
