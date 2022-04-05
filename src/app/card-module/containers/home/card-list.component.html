@@ -1,0 +1,4 @@
+<app-form></app-form>
+<br><br>
+
+<app-diary-card *ngFor="let card of cards | async; let i = index" [card]="card" [index]="i"></app-diary-card>

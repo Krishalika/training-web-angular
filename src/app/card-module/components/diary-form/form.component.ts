@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app.state';
-import * as CardActions from '../../actions/card.actions';
+import { AppState } from 'src/app/card-module/store/states/app.state';
+import { Post } from 'src/app/card-module/models/post.model';
+import * as CardActions from '../../store/actions/card.actions';
 
 @Component({
   selector: 'app-form',
@@ -28,10 +29,6 @@ export class FormComponent implements OnInit {
 
   }
 
-  addCard(title, description) {
-    this.store.dispatch(new CardActions.AddCard({ user: "krishalika", title: title, description: description, created: new Date() }))
-  }
-
   public submitForm(): void {
     const title = this.cardForm.value.title;
     const description = this.cardForm.value.description;
@@ -39,7 +36,14 @@ export class FormComponent implements OnInit {
     if (title && description) {
       console.log(title);
       console.log(description);
-      this.addCard(title, description);
+
+      const post: Post = {
+        user: "Krishalika",
+        title: this.cardForm.controls.title.value,
+        description: this.cardForm.controls.description.value,
+        created: new Date(),
+      }
+      this.store.dispatch(CardActions.addCard({ card: post }));
     } else {
       if (!title) {
         console.log("Missing title");

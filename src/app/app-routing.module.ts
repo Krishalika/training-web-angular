@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CardListComponent } from 'src/Components/card-list/card-list.component';
-import { DiaryCardComponent } from 'src/Components/DiaryCard/diary-card.component';
-import { FormComponent } from 'src/pages/DiaryHome/form.component';
+import { CardListComponent } from 'src/app/card-module/containers/home/card-list.component';
+import { DiaryCardComponent } from 'src/app/card-module/components/diary-card/diary-card.component';
+import { FormComponent } from 'src/app/card-module/components/diary-form/form.component';
 
 const routes: Routes = [
   { path: 'diary-card', component: DiaryCardComponent },
